@@ -2,18 +2,40 @@ class Stack:
     def __init__(self):
         self.stack = []
     
-    def append_stack(self,item):
+    def push(self,item):
         self.stack.append(item)
+
+    def pop(self):
+        if self.length() == 0:
+            return None
+        else:
+            return self.stack.pop()
     
-    def stack_length(self):
+    def length(self):
         return len(self.stack)
+    
+    def view(self):
+        return self.stack
     
 
 s1 = Stack()
-print(s1.stack_length())
-s1.append_stack(10)
-print(s1.stack_length())
-s1.append_stack(30)
-print(s1.stack_length())
-s1.append_stack(50)
-print(s1.stack_length())
+print(s1.length())
+s1.push(10)
+print(s1.length())
+s1.push(30)
+print(s1.length())
+s1.push(50)
+print(s1.length())
+print(s1.view())
+print(s1.pop())
+print(s1.length())
+print(s1.view())
+print(s1.pop())
+print(s1.length())
+print(s1.view())
+print(s1.pop())
+print(s1.length())
+print(s1.view())
+print(s1.pop())
+print(s1.length())
+print(s1.view())
