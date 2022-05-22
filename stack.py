@@ -7,3 +7,13 @@ class Stack:
     
     def stack_length(self):
         return len(self.stack)
+    
+
+s1 = Stack()
+print(s1.stack_length())
+s1.append_stack(10)
+print(s1.stack_length())
+s1.append_stack(30)
+print(s1.stack_length())
+s1.append_stack(50)
+print(s1.stack_length())
