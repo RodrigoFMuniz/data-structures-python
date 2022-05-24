@@ -30,22 +30,29 @@ class Queue:
         self.__queue.insert(0,value)
         self.__head = value
 
-q1=Queue()
-print('Head:',q1.head)
-print('Tail:',q1.tail)
-print('Queue:',q1.queue)
 
-q1.push_right(10)
-print('Head:',q1.head)
-print('Tail:',q1.tail)
-print('Queue:',q1.queue)
+if __name__ == '__main__':
+    q1=Queue()
+    print('Head:',q1.head)
+    print('Tail:',q1.tail)
+    print('Queue:',q1.queue)
 
-q1.push_left(-10)
-print('Head:',q1.head)
-print('Tail:',q1.tail)
-print('Queue:',q1.queue)
+    q1.push_right(10)
+    print('Head:',q1.head)
+    print('Tail:',q1.tail)
+    print('Queue:',q1.queue)
 
-q1.push_left(-20)
-print('Head:',q1.head)
-print('Tail:',q1.tail)
-print('Queue:',q1.queue)
+    q1.push_left(-10)
+    print('Head:',q1.head)
+    print('Tail:',q1.tail)
+    print('Queue:',q1.queue)
+
+    q1.push_left(-20)
+    print('Head:',q1.head)
+    print('Tail:',q1.tail)
+    print('Queue:',q1.queue)
+
+    q1.push_right(20)
+    print('Head:',q1.head)
+    print('Tail:',q1.tail)
+    print('Queue:',q1.queue)
