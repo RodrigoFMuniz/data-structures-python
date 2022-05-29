@@ -30,7 +30,7 @@ class Queue:
             pass
         else:
             self.__queue.pop()
-            self.__tail = self.__queue[-1]
+            self.__head = self.__queue[-1]
         
 
 if __name__ == '__main__':
@@ -68,7 +68,7 @@ if __name__ == '__main__':
     print('Head:',d1.head)
     print('Tail:',d1.tail)
     print('queue:',d1.queue)
-    
+
     d1.pop_queue()
     print('Head:',d1.head)
     print('Tail:',d1.tail)
