@@ -27,7 +27,12 @@ class Queue:
     
     def pop_queue(self):
         if len(self.__queue) == 0:
-            pass
+            self.__head = None
+            self.__tail = None
+        elif len(self.__queue) == 1:
+            self.__queue.pop()
+            self.__head = None
+            self.__tail = None
         else:
             self.__queue.pop()
             self.__head = self.__queue[-1]
@@ -35,42 +40,57 @@ class Queue:
 
 if __name__ == '__main__':
     d1=Queue()
+    print('queue:',d1.queue)
     print('Head:',d1.head)
     print('Tail:',d1.tail)
-    print('queue:',d1.queue)
 
     d1.push(10)
+    print('queue:',d1.queue)
     print('Head:',d1.head)
     print('Tail:',d1.tail)
-    print('queue:',d1.queue)
 
     d1.push(-10)
+    print('queue:',d1.queue)
     print('Head:',d1.head)
     print('Tail:',d1.tail)
-    print('queue:',d1.queue)
 
     d1.push(-20)
+    print('queue:',d1.queue)
     print('Head:',d1.head)
     print('Tail:',d1.tail)
-    print('queue:',d1.queue)
 
     d1.push(20)
+    print('queue:',d1.queue)
     print('Head:',d1.head)
     print('Tail:',d1.tail)
-    print('queue:',d1.queue)
 
     d1.pop_queue()
+    print('queue:',d1.queue)
     print('Head:',d1.head)
     print('Tail:',d1.tail)
-    print('queue:',d1.queue)
 
     d1.pop_queue()
+    print('queue:',d1.queue)
     print('Head:',d1.head)
     print('Tail:',d1.tail)
-    print('queue:',d1.queue)
 
     d1.pop_queue()
+    print('queue:',d1.queue)
     print('Head:',d1.head)
     print('Tail:',d1.tail)
+
+    d1.pop_queue()
     print('queue:',d1.queue)
+    print('Head:',d1.head)
+    print('Tail:',d1.tail)
+
+    d1.pop_queue()
+    print('queue:',d1.queue)
+    print('Head:',d1.head)
+    print('Tail:',d1.tail)
+    
+    d1.pop_queue()
+    print('queue:',d1.queue)
+    print('Head:',d1.head)
+    print('Tail:',d1.tail)
 
