@@ -28,6 +28,9 @@ class Deque:
 
     def push_left(self, value):
         if len(self.__deque) == 0:
+            self.__tail = None
+            self.__head = None
+        if len(self.__deque) == 1:
             self.__tail = value
             self.__head = value
         else:
