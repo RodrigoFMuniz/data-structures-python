@@ -27,8 +27,12 @@ class Deque:
 
 
     def push_left(self, value):
-        self.__deque.insert(0,value)
-        self.__head = value
+        if len(self.__deque) == 0:
+            self.__tail = value
+            self.__head = value
+        else:
+            self.__deque.insert(0,value)
+            self.__head = value
 
 
 if __name__ == '__main__':
@@ -37,7 +41,7 @@ if __name__ == '__main__':
     print('Tail:',d1.tail)
     print('deque:',d1.deque)
 
-    d1.push_right(10)
+    d1.push_left(10)
     print('Head:',d1.head)
     print('Tail:',d1.tail)
     print('deque:',d1.deque)
