@@ -18,12 +18,13 @@ class Deque:
 
     def push_right(self, value):
         if len(self.__deque) == 0:
+            self.__deque.append(value)
             self.__tail = value
             self.__head = value
         else:
             self.__tail = value
+            self.__deque.append(value)
         
-        self.__deque.append(value)
 
 
     def push_left(self, value):
