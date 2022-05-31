@@ -110,7 +110,7 @@
             self.__deque = []
             self.__head = None
             self.__tail = None
-        
+
         @property
         def deque(self):
             return self.__deque
@@ -129,21 +129,29 @@
                 self.__tail = value
                 self.__head = value
             else:
-                self.__tail = value
                 self.__deque.append(value)
-            
-
+                self.__tail = value
 
         def push_left(self, value):
             if len(self.__deque) == 0:
-                self.__tail = None
-                self.__head = None
-            if len(self.__deque) == 1:
+                self.__deque.insert(0,value)
                 self.__tail = value
                 self.__head = value
             else:
                 self.__deque.insert(0,value)
                 self.__head = value
+
+        def pop_left(self):
+            if len(self.__deque) == 0:
+                self.__tail = None
+                self.__head = None
+            elif len(self.__deque) == 1:
+                self.__deque.pop(0)
+                self.__tail = None
+                self.__head = None
+            else:
+                self.__deque.pop(0)
+                self.__head = self.__deque[0]
 
 
     if __name__ == '__main__':
@@ -152,7 +160,7 @@
         print('Tail:',d1.tail)
         print('deque:',d1.deque)
 
-        d1.push_right(10)
+        d1.push_left(10)
         print('Head:',d1.head)
         print('Tail:',d1.tail)
         print('deque:',d1.deque)
@@ -168,6 +176,13 @@
         print('deque:',d1.deque)
 
         d1.push_right(20)
+        print('Head:',d1.head)
+        print('Tail:',d1.tail)
+        print('deque:',d1.deque)
+
+        print('-------------------------')
+
+        d1.pop_left()
         print('Head:',d1.head)
         print('Tail:',d1.tail)
         print('deque:',d1.deque)
