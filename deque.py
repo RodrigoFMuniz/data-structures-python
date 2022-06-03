@@ -46,6 +46,17 @@ class Deque:
             self.__deque.pop(0)
             self.__head = self.__deque[0]
 
+    def pop_right(self):
+        if len(self.__deque) == 0:
+            pass
+        elif len(self.__deque) == 1:
+            self.__deque.pop()
+            self.__tail = None
+            self.__head = None
+        else:
+            self.__deque.pop()
+            self.__tail = self.__deque[-1]
+
 
 if __name__ == '__main__':
     d1=Deque()
@@ -68,7 +79,21 @@ if __name__ == '__main__':
     print('Tail:',d1.tail)
     print('deque:',d1.deque)
 
+    d1.push_left(-30)
+    print('Head:',d1.head)
+    print('Tail:',d1.tail)
+    print('deque:',d1.deque)
+
     d1.push_right(20)
+    print('Head:',d1.head)
+    print('Tail:',d1.tail)
+    print('deque:',d1.deque)
+
+    d1.push_right(30)
+    print('Head:',d1.head)
+    print('Tail:',d1.tail)
+    print('deque:',d1.deque)
+    d1.push_right(40)
     print('Head:',d1.head)
     print('Tail:',d1.tail)
     print('deque:',d1.deque)
@@ -76,6 +101,11 @@ if __name__ == '__main__':
     print('-------------------------')
 
     d1.pop_left()
+    print('Head:',d1.head)
+    print('Tail:',d1.tail)
+    print('deque:',d1.deque)
+
+    d1.pop_right()
     print('Head:',d1.head)
     print('Tail:',d1.tail)
     print('deque:',d1.deque)
