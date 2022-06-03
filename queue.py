@@ -27,8 +27,7 @@ class Queue:
     
     def pop_queue(self):
         if len(self.__queue) == 0:
-            self.__head = None
-            self.__tail = None
+            ...
         elif len(self.__queue) == 1:
             self.__queue.pop()
             self.__head = None
