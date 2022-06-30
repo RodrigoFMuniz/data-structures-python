@@ -196,3 +196,4 @@
         print('Head:',d1.head)
         print('Tail:',d1.tail)
         print('deque:',d1.deque)
+### hash
