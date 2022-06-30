@@ -1,5 +1,11 @@
 # Data Structures
 
+## What is data structure?
+
+    Disciplina que estuda as técnicas computacionais
+    para a organização e manipulação eficiente de
+    quaisquer quantidades de informações
+
 ## Using It to solve problems
 
 ### Stack
