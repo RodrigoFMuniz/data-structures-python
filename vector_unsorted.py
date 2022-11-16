@@ -41,4 +41,25 @@ class VectorUnsorted:
             self.__vector.append(item)
             self.__pointer+=1
 
+    def remove_item(self, item:int)->Union[str,None]:
+
+        if not isinstance(item,int):
+            return f"Erro. O tipo do item deve ser int"
+
+        if self.__pointer == -1:
+            return self.__empty()
+
+        else:
+            for ind, _ in enumerate(self.__vector):
+                if self.__vector[ind] == item:
+                    self.__vector.remove(item)
+
+                    while ind < self.length()-1:
+                        self.__vector[ind] = self.__vector[ind+1]
+                        ind+= 1
+
+                    return f"Item {item} remvido com sucesso"
+
+            return f"Item {item} não existe na lista"
+                
 
