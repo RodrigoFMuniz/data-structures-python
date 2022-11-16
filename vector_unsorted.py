@@ -44,23 +44,46 @@ class VectorUnsorted:
             self.__vector.append(item)
             self.__pointer += 1
 
-    def remove_item(self, item: int) -> Union[str, None]:
+    def remove_item(self, item: int = None, indice=None) -> Union[str, None]:
 
-        if not isinstance(item, int):
-            return f"Erro. O tipo do item deve ser int"
+        if indice == None:
 
-        if self.__pointer == -1:
-            return self.__empty()
+            if not isinstance(item, int):
+                return f"Erro. O tipo do item deve ser int"
+
+            if self.__pointer == -1:
+                return self.__empty()
+
+            else:
+                for ind, _ in enumerate(self.__vector):
+                    if self.__vector[ind] == item:
+                        self.__vector.remove(item)
+
+                        while ind < self.length()-1:
+                            self.__vector[ind] = self.__vector[ind+1]
+                            ind += 1
+
+                        return f"Item {item} remvido com sucesso"
+
+                return f"Item {item} não existe na lista"
 
         else:
-            for ind, _ in enumerate(self.__vector):
-                if self.__vector[ind] == item:
-                    self.__vector.remove(item)
 
-                    while ind < self.length()-1:
-                        self.__vector[ind] = self.__vector[ind+1]
-                        ind += 1
+            if not isinstance(indice, int):
+                return f"Erro. O tipo do item deve ser int"
 
-                    return f"Item {item} remvido com sucesso"
+            if self.__pointer == -1:
+                return self.__empty()
 
-            return f"Item {item} não existe na lista"
+            else:
+                for ind, _ in enumerate(self.__vector):
+                    if ind == indice:
+                        self.__vector.pop(indice)
+
+                        while ind < self.length()-1:
+                            self.__vector[ind] = self.__vector[ind+1]
+                            ind += 1
+
+                        return f"Item no índice: {indice}, removido com sucesso"
+
+                return f"Índice {indice} não existe na lista"
