@@ -35,7 +35,7 @@ class VectorUnsorted:
     def insert_item(self, item: int) -> Union[str, None]:
 
         if self.__size == (self.__pointer+1):
-            return f"Capacidade máxima atingida"
+            return f"Capacidade máxima({self.__size}) atingida "
 
         if not isinstance(item, int):
             return f"Erro. O tipo do item deve ser int"
@@ -87,3 +87,25 @@ class VectorUnsorted:
                         return f"Item no índice: {indice}, removido com sucesso"
 
                 return f"Índice {indice} não existe na lista"
+
+    def remove_all_equals(self, item: int = None) -> Union[List[int], str, None]:
+
+        if not isinstance(item, int):
+            return f"Erro. O tipo do item deve ser int"
+
+        if self.__pointer == -1:
+            return self.__empty()
+
+        if isinstance(self.get_item(item), dict):
+            dic = {}
+            for ind, i, in enumerate(self.__vector[::-1]):
+                if i == item:
+                    dic.update({ind: i})
+                    self.__vector.remove(i)
+                    dic. update({ind: i})
+
+            return f"Removidos:{len(dic)} itens com valor {item}"
+
+        else:
+
+            return f"{item} não existe na lista"
